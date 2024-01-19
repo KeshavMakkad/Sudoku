@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div class="title">SUDOKU</div>
+    <hr />
+    <div class="errors">Errors:</div>
+    <br />
+    <div class="game-container">
+        <div class="sudoku-grid">
+            <div class="board"></div>
+            <div class="numbers"></div>
+        </div>
+
+        <div class="game-options">
+            <button class="new-game-option" onclick="createNewGame()">New Game</button>
+            <button class="restart-same-game">Restart Game</button>
+        </div>
+
+    </div>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
