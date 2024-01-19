@@ -1,0 +1,58 @@
+body {
+    text-align: center;
+    margin: 1rem;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightsalmon;
+}
+
+hr {
+    width: 400px;
+}
+
+.board {
+    height: 540px;
+    width: 540px;
+
+    display: flex;
+    margin: 1rem auto;
+    background-color: black;
+    flex-wrap: wrap;
+}
+
+.numbers {
+    height: 60px;
+    width: 540px;
+
+    display: flex;
+    margin: 1rem auto;
+    background-color: black;
+    flex-wrap: wrap;
+}
+
+.tile {
+    height: 56px;
+    width: 56px;
+    border: 2px solid lightgray;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    margin: 0;
+}
+
+.restart-same-game, .new-game-option{
+    height: 4rem;
+    width: 10%;
+    padding: 5px;
+    margin: 1rem;
+    font-size: x-large;
+    border: 2px solid gray;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.game-options{
+    margin: 0 4rem;
+}
