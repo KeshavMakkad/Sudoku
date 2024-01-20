@@ -2,13 +2,16 @@ let N = 9; // total Number of rows and colms
 let sqrtOfN = 3; // Number of rows and colms per mini square
 
 const gameBoard = [];
-creategameBoard();
 
-generateDiagonal();
-fillRemainingCells(0, 3);
-// function newGame(){
-//   return {solutionBoard: gameBoard, userBoard: emptyGameBoard}
-// }
+function newGame(){
+  return {solutionBoard: gameBoard, userBoard: emptyGameBoard}
+  creategameBoard();
+
+  generateDiagonal();
+  fillRemainingCells(0, 3);
+
+  return gameBoard
+}
 
 // Creates a 9x9 matrix to store the sudoku board
 function creategameBoard() {
@@ -112,10 +115,10 @@ function fillRemainingCells(i, j) {
   return false;
 }
 
-export let emptyGameBoard = JSON.stringify(gameBoard);
+let emptyGameBoard = JSON.stringify(gameBoard);
 emptyGameBoard = JSON.parse(emptyGameBoard);
 
-export const emptyGameBoardExport = emptyGameBoard
+const emptyGameBoardExport = emptyGameBoard
 
 function removeKEle(k) {
   for (let i = 0; i < k;) {

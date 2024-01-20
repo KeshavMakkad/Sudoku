@@ -1,4 +1,5 @@
-import { emptyGameBoard } from "./js/GameLogic.js";
+// import { emptyGameBoard } from "./js/GameLogic.js";
+import "./js/GameLogic.js"
 
 const sudokuBoard = document.querySelector(".board");
 const numberBoard = document.querySelector(".numbers");
@@ -31,3 +32,7 @@ for(let i = 0;i< 9;i++){
         if(emptyGameBoard[i][j]) tile.innerText = emptyGameBoard[i][j];
     }
 }
+
+const gameBoard = newGame();
+
+console.log(gameBoard);
