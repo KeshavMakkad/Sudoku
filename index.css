@@ -62,3 +62,7 @@ hr {
   background-color: paleturquoise;
   color: black;
 }
+
+.wrong-ans{
+  background-color: red;
+}

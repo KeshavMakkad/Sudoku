@@ -34,6 +34,7 @@ const numberClicked = (selected) => {
 };
 
 const isValid = (row, colm) => {
+  console.log(colm)  
   return gameBoard[row][colm] == active ? true : false;
 };
 
@@ -47,12 +48,12 @@ const gameTileClicked = (id) => {
     return;
   }
   const rowColmOfClicked = id.split("-");
-  if (
-    !isValid(rowColmOfClicked[0] - 1, rowColmOfClicked[1] - 1) &&
-    !wrongAns(clickedTile)
-  )
-    clickedTile.classList.add("wrong-ans");
-  else if (wrongAns(clickedTile)) clickedTile.classList.remove("wrong-ans");
+  if(isValid(rowColmOfClicked[0]-1 , rowColmOfClicked[1]-1)){
+    clickedTile.classList.remove("wrong-ans");
+  }
+  else if(!isValid(rowColmOfClicked[0]-1 , rowColmOfClicked[1]-1)){
+    clickedTile.classList.add("wrong-ans")
+  }
   clickedTile.textContent = active;
 };
 
@@ -78,3 +79,5 @@ const addEventListeners = () => {
 };
 
 createNewGame();
+console.log(gameBoard);
+addEventListeners();
