@@ -3,14 +3,13 @@ let sqrtOfN = 3; // Number of rows and colms per mini square
 
 const gameBoard = [];
 
-function newGame(){
-  return {solutionBoard: gameBoard, userBoard: emptyGameBoard}
+export default function newGame() {
   creategameBoard();
 
   generateDiagonal();
   fillRemainingCells(0, 3);
 
-  return gameBoard
+  return gameBoard;
 }
 
 // Creates a 9x9 matrix to store the sudoku board
@@ -59,21 +58,21 @@ function usedInBox(startRow, startColm, num) {
 }
 
 function usedInRow(row, num) {
-  for (let j = 0; j < N; j++)
-    if (gameBoard[row][j] == num)
-      return true;
+  for (let j = 0; j < N; j++) if (gameBoard[row][j] == num) return true;
   return false;
 }
 
 function usedInColm(colm, num) {
-  for (let i = 0; i < N; i++)
-    if (gameBoard[i][colm] == num)
-      return true;
+  for (let i = 0; i < N; i++) if (gameBoard[i][colm] == num) return true;
   return false;
 }
 
 function isPlaceable(row, colm, num) {
-  return (!usedInRow(row, num) && !usedInColm(colm, num) && !usedInBox(row - row % sqrtOfN, colm - colm % sqrtOfN, num));
+  return (
+    !usedInRow(row, num) &&
+    !usedInColm(colm, num) &&
+    !usedInBox(row - (row % sqrtOfN), colm - (colm % sqrtOfN), num)
+  );
 }
 
 function fillRemainingCells(i, j) {
@@ -87,19 +86,14 @@ function fillRemainingCells(i, j) {
   }
 
   if (i < sqrtOfN) {
-    if (j < sqrtOfN)
-      j = sqrtOfN;
-  }
-  else if (i < N - sqrtOfN) {
-    if (j === Math.floor(i / sqrtOfN) * sqrtOfN)
-      j = j + sqrtOfN;
-  }
-  else {
+    if (j < sqrtOfN) j = sqrtOfN;
+  } else if (i < N - sqrtOfN) {
+    if (j === Math.floor(i / sqrtOfN) * sqrtOfN) j = j + sqrtOfN;
+  } else {
     if (j === N - sqrtOfN) {
       i = i + 1;
       j = 0;
-      if (i >= N)
-        return true;
+      if (i >= N) return true;
     }
   }
 
@@ -115,23 +109,19 @@ function fillRemainingCells(i, j) {
   return false;
 }
 
-let emptyGameBoard = JSON.stringify(gameBoard);
-emptyGameBoard = JSON.parse(emptyGameBoard);
-
-const emptyGameBoardExport = emptyGameBoard
-
-function removeKEle(k) {
-  for (let i = 0; i < k;) {
+export function removeKEle(k, gameBoard) {
+  gameBoard = JSON.parse(JSON.stringify(gameBoard));
+  let filled = 0;
+  while (filled < k) {
     let rowIndex = generateRandom(9) - 1;
     let colmIndex = generateRandom(9) - 1;
-    if (emptyGameBoard[rowIndex][colmIndex] !== 0) {
-      emptyGameBoard[rowIndex][colmIndex] = 0;
-      i++;
+    if (gameBoard[rowIndex][colmIndex] !== 0) {
+      gameBoard[rowIndex][colmIndex] = 0;
+      filled++;
     }
   }
+  return gameBoard;
 }
-
-removeKEle(40)
 // Use HashMap In used reow , colm ,blah blah
 
 // 55 - Hard
