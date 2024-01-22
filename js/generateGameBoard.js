@@ -31,6 +31,7 @@ const generateGameBoard = () => {
   }
 };
 
+
 export function generateBoard(){
     generateNumberBoard();
     generateGameBoard();

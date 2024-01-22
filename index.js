@@ -1,29 +1,14 @@
-import newGame, { removeKEle } from "./js/gameLogic.js";
-import { NUM_ROWS } from "./js/constants.js";
 import { generateBoard } from "./js/generateGameBoard.js";
+import createNewGame from "./js/createNewGame.js";
+import gameTileClicked from "./js/gameTileClicked.js";
 
 generateBoard();
 
-let active = 1;
+const activeNumber = document.getElementById("1");
+activeNumber.classList.add("active");
+const gameBoard = createNewGame();
 
-let gameBoard;
-
-const createNewGame = () => {
-  const CreateGameBoard = newGame();
-  const emptyGameBoard = removeKEle(40, CreateGameBoard);
-
-  gameBoard = JSON.parse(JSON.stringify(CreateGameBoard));
-  for (let i = 0; i < NUM_ROWS; i++) {
-    for (let j = 0; j < NUM_ROWS; j++) {
-      const idOfGameTile = `${i + 1}-${j + 1}`;
-      const tile = document.getElementById(idOfGameTile);
-      tile.innerText = emptyGameBoard[i][j];
-    }
-  }
-
-  const active = document.getElementById("1");
-  active.classList.add("active");
-};
+export let active = 1;
 
 const numberClicked = (selected) => {
   const activeNumber = document.getElementById(active);
@@ -31,30 +16,6 @@ const numberClicked = (selected) => {
   activeNumber.classList.remove("active");
   selectedNumber.classList.add("active");
   active = selected;
-};
-
-const isValid = (row, colm) => {
-  console.log(colm)  
-  return gameBoard[row][colm] == active ? true : false;
-};
-
-const wrongAns = (clickedTile) => {
-  return clickedTile.classList.contains("wrong-ans");
-};
-
-const gameTileClicked = (id) => {
-  const clickedTile = document.getElementById(id);
-  if (clickedTile.textContent !== "" && !wrongAns(clickedTile)) {
-    return;
-  }
-  const rowColmOfClicked = id.split("-");
-  if(isValid(rowColmOfClicked[0]-1 , rowColmOfClicked[1]-1)){
-    clickedTile.classList.remove("wrong-ans");
-  }
-  else if(!isValid(rowColmOfClicked[0]-1 , rowColmOfClicked[1]-1)){
-    clickedTile.classList.add("wrong-ans")
-  }
-  clickedTile.textContent = active;
 };
 
 const addEventListeners = () => {
@@ -78,6 +39,6 @@ const addEventListeners = () => {
   }
 };
 
-createNewGame();
-console.log(gameBoard);
+
+
 addEventListeners();
