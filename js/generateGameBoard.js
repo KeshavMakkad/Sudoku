@@ -1,6 +1,5 @@
-// import { NUM_ROWS } from "./constants";
-
-const NUM_ROWS = 9;
+import { NUM_ROWS } from "./constants.js";
+import createNewGame from "./createNewGame.js";
 
 const sudokuBoard = document.querySelector(".board");
 const numberBoard = document.querySelector(".numbers");
@@ -31,8 +30,8 @@ const generateGameBoard = () => {
   }
 };
 
-
-export function generateBoard(){
-    generateNumberBoard();
-    generateGameBoard();
+export function generateBoard() {
+  generateNumberBoard();
+  generateGameBoard();
+  createNewGame();
 }

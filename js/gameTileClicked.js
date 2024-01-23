@@ -1,5 +1,5 @@
-import { gameBoard } from "./createNewGame.js"
-import { active } from "../index.js";
+import { gameBoard } from "./createNewGame.js";
+import { active } from "./numberTileClicked.js";
 
 const isValid = (row, colm) => {
   return gameBoard[row][colm] == active;

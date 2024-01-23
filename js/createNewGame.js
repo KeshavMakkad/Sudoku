@@ -1,5 +1,6 @@
 import newGame, { removeKEle } from "./gameLogic.js";
 import { NUM_ROWS } from "./constants.js";
+import { generateBoard } from "./generateGameBoard.js";
 
 export let gameBoard;
 
