@@ -25,6 +25,8 @@ const generateGameBoard = () => {
       gameTile.setAttribute("id", idOfGameTile); // Set the id of the tile
       gameTile.classList.add("tile"); // Add styling by using the tile class
       gameTile.classList.add("game-board-tile");
+      if ((i + 1) % 3 === 0) gameTile.classList.add("game-bottom-tile");
+      if ((j + 1) % 3 === 0) gameTile.classList.add("game-right-tile");
       sudokuBoard.appendChild(gameTile); //Append the div to the game board.....
     }
   }

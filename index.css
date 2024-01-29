@@ -33,7 +33,7 @@ hr {
 .tile {
   height: 56px;
   width: 56px;
-  border: 2px solid lightgray;
+  border: 2px solid gray;
   color: white;
   display: flex;
   justify-content: center;
@@ -58,11 +58,28 @@ hr {
   margin: 0 4rem;
 }
 
-.active{
+.active {
   background-color: paleturquoise;
   color: black;
 }
 
-.wrong-ans{
+.wrong-ans {
   background-color: red;
+}
+
+.user-input-correct-ans {
+  background-color: lightgray;
+  color: black;
+}
+
+.wrong-active-ans {
+  background-color: orange;
+}
+
+.game-right-tile {
+  border-right: 2px solid blue;
+}
+
+.game-bottom-tile {
+  border-bottom: 2px solid blue;
 }

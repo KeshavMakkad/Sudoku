@@ -4,8 +4,6 @@ import createNewGame from "./js/createNewGame.js";
 
 generateBoard();
 
-const activeNumber = document.getElementById("1");
-activeNumber.classList.add("active");
 
-createNewGame();
+
 addEventListeners();

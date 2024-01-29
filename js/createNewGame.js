@@ -1,8 +1,10 @@
 import newGame, { removeKEle } from "./gameLogic.js";
 import { NUM_ROWS } from "./constants.js";
+import { count, resetCount } from "./gameFunction.js";
 import { generateBoard } from "./generateGameBoard.js";
 
 export let gameBoard;
+resetCount();
 
 const createNewGame = () => {
   const CreateGameBoard = newGame();
