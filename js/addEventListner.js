@@ -8,7 +8,7 @@ import {
 
 const addEventListeners = () => {
   const newGameBtn = document.querySelector("#new-game-btn");
-  newGameBtn.addEventListener("click", createNewGame);
+  newGameBtn.addEventListener("click", () => createNewGame(true));
 
   const numberTiles = document.querySelectorAll(".numbers-tile");
 

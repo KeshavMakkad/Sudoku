@@ -1,24 +1,33 @@
 import newGame, { removeKEle } from "./gameLogic.js";
 import { NUM_ROWS } from "./constants.js";
-import { count, resetCount } from "./gameFunction.js";
-import { generateBoard } from "./generateGameBoard.js";
+import {
+  getGameFromLocalStorage,
+  setGameInLocalStorage,
+} from "./localStorage.js";
 
-export let gameBoard;
-resetCount();
+let gameBoard, emptyGameBoard;
 
-const createNewGame = () => {
-  const CreateGameBoard = newGame();
-  const emptyGameBoard = removeKEle(40, CreateGameBoard);
+const createNewGame = (isNewGame) => {
+  const items = getGameFromLocalStorage();
+  if (!isNewGame && items) {
+    ({ gameBoard, emptyGameBoard } = items);
+  } else {
+    gameBoard = newGame();
+    emptyGameBoard = removeKEle(40, gameBoard);
+  }
 
-  gameBoard = JSON.parse(JSON.stringify(CreateGameBoard));
   for (let i = 0; i < NUM_ROWS; i++) {
     for (let j = 0; j < NUM_ROWS; j++) {
       const idOfGameTile = `${i + 1}-${j + 1}`;
       const tile = document.getElementById(idOfGameTile);
       tile.innerText = emptyGameBoard[i][j];
+      tile.classList.remove("wrong-active-ans");
     }
   }
+
+  setGameInLocalStorage(emptyGameBoard, gameBoard);
   return gameBoard;
 };
 
 export default createNewGame;
+export { gameBoard };

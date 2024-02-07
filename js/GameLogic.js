@@ -109,8 +109,9 @@ function fillRemainingCells(i, j) {
 }
 
 export function removeKEle(k, gameBoard) {
-  gameBoard = JSON.parse(JSON.stringify(gameBoard));
   let filled = 0;
+  gameBoard = JSON.parse(JSON.stringify(gameBoard));
+
   while (filled < k) {
     let rowIndex = generateRandom(NUM_ROWS) - 1;
     let colmIndex = generateRandom(NUM_ROWS) - 1;

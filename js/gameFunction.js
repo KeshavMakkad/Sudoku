@@ -1,8 +1,9 @@
 import { gameBoard } from "./createNewGame.js";
 import { BLANK_CELL } from "./constants.js";
+import { checkIfWon, updateCorrectSquares } from "./checkWin.js";
 
 export let prevClickedTile;
-export var count = 0;
+export let count = 0;
 
 export const resetCount = () => (count = 0);
 let idOfTheClicked;
@@ -49,5 +50,7 @@ export const numberTileClicked = (id) => {
     prevClickedTile.classList.remove("active");
     prevClickedTile = undefined;
     count++;
+    updateCorrectSquares();
+    checkIfWon();
   }
 };
