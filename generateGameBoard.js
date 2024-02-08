@@ -1,5 +1,5 @@
-import { NUM_ROWS } from "/js/constants.js";
-import createNewGame from "/js/createNewGame.js";
+import { NUM_ROWS } from "/constants.js";
+import createNewGame from "/createNewGame.js";
 
 const sudokuBoard = document.querySelector(".board");
 const numberBoard = document.querySelector(".numbers");

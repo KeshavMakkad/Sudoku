@@ -1,10 +1,10 @@
-import createNewGame from "/js/createNewGame.js";
+import createNewGame from "/createNewGame.js";
 import {
   gameTileClicked,
   prevClickedTile,
   numberTileClicked,
   count,
-} from "/js/gameFunction.js";
+} from "/gameFunction.js";
 
 const addEventListeners = () => {
   const newGameBtn = document.querySelector("#new-game-btn");

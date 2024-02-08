@@ -1,4 +1,4 @@
-import { BLANK_CELL, NUM_ROWS, SQRT_N } from "./constants.js";
+import { BLANK_CELL, NUM_ROWS, SQRT_N } from "/constants.js";
 
 const gameBoard = [];
 

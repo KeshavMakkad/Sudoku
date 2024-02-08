@@ -1,9 +1,9 @@
-import newGame, { removeKEle } from "/js/gameLogic.js";
-import { NUM_ROWS } from "/js/constants.js";
+import newGame, { removeKEle } from "/gameLogic.js";
+import { NUM_ROWS } from "/constants.js";
 import {
   getGameFromLocalStorage,
   setGameInLocalStorage,
-} from "/js/localStorage.js";
+} from "/localStorage.js";
 
 let gameBoard, emptyGameBoard;
 
