@@ -1,6 +1,6 @@
-import { gameBoard } from "./createNewGame.js";
-import { BLANK_CELL } from "./constants.js";
-import { checkIfWon, updateCorrectSquares } from "./checkWin.js";
+import { gameBoard } from "/js/createNewGame.js";
+import { BLANK_CELL } from "/js/constants.js";
+import { checkIfWon, updateCorrectSquares } from "/js/checkWin.js";
 
 export let prevClickedTile;
 export let count = 0;

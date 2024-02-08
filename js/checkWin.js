@@ -1,8 +1,8 @@
-import { NUM_SQUARES } from "./constants.js";
+import { NUM_SQUARES } from "/js/constants.js";
 import {
   getCheckWinInLocalStorage,
   setCheckWinInLocalStorage,
-} from "./localStorage.js";
+} from "/js/localStorage.js";
 
 let correctSquaresSelected = 40;
 
